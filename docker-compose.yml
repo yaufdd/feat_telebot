@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  bot:
+    build: .
+    environment:
+      - TELEBOT_TOKEN=7128882313:AAHlbCt3AtnbkYpzqWinVYkH71GqKOT6n1k
+    depends_on:
+      - redis
+    restart: always
+
+  redis:
+    image: redis:latest
+    restart: always

@@ -4,7 +4,7 @@ import requests
 
 from sbt_json import test_json
 
-r = redis.Redis(host='localhost', port=6379, db=0)
+r = redis.Redis(host='redis', port=6379, db=0)
 
 bot = telebot.TeleBot('7128882313:AAHlbCt3AtnbkYpzqWinVYkH71GqKOT6n1k')
 

@@ -4,9 +4,17 @@ import requests
 
 from sbt_json import test_json
 
-r = redis.Redis(host='redis', port=6379, db=0)
-
 bot = telebot.TeleBot('7128882313:AAHlbCt3AtnbkYpzqWinVYkH71GqKOT6n1k')
+
+r = redis.Redis(host='redis', port=6379, db=0)
+try:
+    response = r.ping()
+    if response:
+        print("Успешно подключено к Redis")
+    else:
+        print("Не удалось подключиться к Redis")
+except redis.ConnectionError:
+        print("Ошибка подключения к Redis")
 
 def is_adress_not_unique(cur_address):
     has_duplicates = False
